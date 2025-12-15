@@ -6,7 +6,6 @@ import (
 
 	"github.com/rom/DApp_study/config"
 	"github.com/rom/DApp_study/internal/domain/example"
-	"github.com/rom/DApp_study/internal/domain/service"
 	"github.com/rom/DApp_study/internal/infrastructure/chain"
 )
 
@@ -27,9 +26,11 @@ func Run() { //nolint: gocyclo,cyclop,funlen,gocritic,nolintlint
 
 	log.Printf("Connected to Sepolia network")
 
-	ethService := service.NewEthService(ethClientInit, cfg)
+	//ethService := service.NewEthService(ethClientInit, cfg)
 
 	// 执行案例
-	example.Show(ethService)
+	//example.Show(ethService)
 
+	// AbiGen
+	example.ExampleAbiGen(ethClientInit)
 }
